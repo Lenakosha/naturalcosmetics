@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200&display=swap" rel="stylesheet">
+    <link href="style/main.css" rel="stylesheet">
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/items.js"></script>
+    <style>
+        .main-row {
+            justify-content: center
+        }
+
+        #register_message,
+        #login_messages {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://cdn.icon-icons.com/icons2/2751/PNG/512/menu_burger_icon_176150.png" width="35"
+                     height="35">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li class="d-none nav-item_template"><a class="dropdown-item item-name" href="#">тоник для лица</a></li>
+                <script> _itemsApi.loadItems(document.querySelector(".nav-item_template"), 1, 100) </script>
+            </ul>
+        </div>
+        <a class="navbar-brand" href="#"><h1>EkoKosmetika</h1></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false" align="left">
+                        Фильтр
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" align="left">
+                        <li class="nav-categories_template d-none"><a class="dropdown-item category-name" href="#">Антицеллюлитные средства</a></li>
+                        <script> _itemsApi.loadCategories(document.querySelector(".nav-categories_template"), 1, 100) </script>
+                    </ul>
+                </li>
+                <button class="btn btn-outline-secondary">
+                    <img src="https://www.clipartmax.com/png/full/129-1294696_heart-computer-icons-clip-art-hobby-icon-white-png.png"
+                         width="35" height="35">
+                </button>
+            </ul>
+
+            <div class="header__auth">
+
+
+                <img src="https://miro.medium.com/max/2400/1*hgRr3ByksTSJmzK0MuM8YA@2x.jpeg" width="30" height="40">
+                <a class="auth__lnk is-login d-none" id="logged_btn" href="client.html">Login</a>
+                <a class="auth__lnk is-login" id="unlogged_btn" href="authorization.html">Вход / Регистрация</a>
+
+            </div>
+
+            <form class="d-flex">
+                <button class="btn btn-outline-secondary">
+                    <img src="http://cdn.onlinewebfonts.com/svg/img_19457.png" width="20" height="20">
+                </button>
+                <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+                <button class="btn btn-outline-secondary">
+                    <img src="http://cdn.onlinewebfonts.com/svg/download_197711.png" width="35" height="35">
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="row main-row" id="login_block">
+
+        <div class="col-lg-8 col-lg-offset-2">
+
+            <h1 class="text-center">Вход</h1>
+
+            <form id="login-form" method="post" role="form">
+
+                <div class="messages" id="login_messages"></div>
+
+                <div class="controls">
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="log_email">Email *</label>
+                                <input id="log_email" type="email" name="email" class="form-control"
+                                       placeholder="Please enter your email *" required="required"
+                                       data-error="Valid email is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="log_password">Пароль</label>
+                                <input id="log_password" type="password" name="password" class="form-control"
+                                       placeholder="Please enter your password">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <!-- Replace data-sitekey with your own one, generated at https://www.google.com/recaptcha/admin -->
+                                <div class="g-recaptcha" data-sitekey="6LfKURIUAAAAAO50vlwWZkyK_G2ywqE52NU7YO0S"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <a href="#reg_block" type="submit" class="btn btn-secondary btn-success btn-send">Регистрация</a>
+                            <input type="submit" class="btn btn-primary btn-success btn-send" value="Войти">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div><!-- /.col-lg-8 col-lg-offset-2 -->
+
+    </div> <!-- /.row-->
+
+    <div class="row main-row" id="reg_block">
+
+        <div class="col-lg-8 col-lg-offset-2 m-auto">
+
+            <h1 class="text-center">Регистрация</h1>
+
+            <form id="register-form" method="post" role="form">
+
+                <div class="messages" id="register_message"></div>
+
+                <div class="controls">
+
+
+                    <div class="d-flex flex-column align-items-center">
+
+                        <div class="col-md-6 mb-4">
+                            <div class="form-group">
+                                <label for="reg_email">Email *</label>
+                                <input id="reg_email" type="email" name="email" class="form-control"
+                                       placeholder="Please enter your email *" required="required"
+                                       data-error="Valid email is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 mb-4">
+                            <div class="form-group">
+                                <label for="reg_login">Логин *</label>
+                                <input id="reg_login" type="text" name="login" class="form-control"
+                                       placeholder="Please enter your login *" required="required"
+                                       data-error="Valid login is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 mb-4">
+                            <div class="form-group">
+                                <label for="reg_password">Пароль</label>
+                                <input id="reg_password" type="password" name="password" class="form-control"
+                                       placeholder="Please enter your password">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="form-group">
+                                <!-- Replace data-sitekey with your own one, generated at https://www.google.com/recaptcha/admin -->
+                                <div class="g-recaptcha" data-sitekey="6LfKURIUAAAAAO50vlwWZkyK_G2ywqE52NU7YO0S"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+
+
+                        <div class="col-md-12">
+                            <a href="#login_block" type="submit" class="btn btn-secondary btn-success btn-send">Вход</a>
+                            <input type="submit" class="btn btn-primary btn-success btn-send" value="Зарегистрироваться">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div><!-- /.col-lg-8 col-lg-offset-2 -->
+
+    </div> <!-- /.row-->
+
+</div> <!-- /.container-->
+
+
+<div class="footer">
+    <h5>EkoKosmetika-2021</h5>
+    <p> lenakoshkina2000@gmail.com</p>
+</div>
+<script>
+    if(location.hash !== "#login_block" && location.hash !== "#reg_block"){
+        location.hash = "#login_block"
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="https://bootstraptema.ru/snippets/form/2017/recaptcha/validator.js"></script>
+<script src="https://bootstraptema.ru/snippets/form/2017/recaptcha/contact.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+

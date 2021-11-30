@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+}
+
+.btn{
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    border: white;
+}
+
+.btn-outline-success{
+    width: 50px;
+    height: 50px;
+    border: white;
+}
+
+.d-flex{
+    padding: 10px;
+    indent-edge-reset: padding-edge;
+
+}
+.d-flex-c{
+    border: white;
+    background: white;
+}
+.header__auth {
+    left: 905px;
+    top: 30px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: 235px;
+    height: 35px;
+}
+
+
+/* Header/logo Title */
+.header {
+    padding: 0px;
+    text-align: center;
+    background: #fff;
+    color: black;
+}
+
+/* Increase the font size of the heading */
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+    /*font-size: 50px;*/
+}
+
+/* Style the top navigation bar */
+.navbar {
+    /*overflow: hidden;*/
+    /*background-color: #ffc9dd;*/
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+
+
+/* Column container */
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    -ms-flex: 40%; /* IE10 */
+    flex: 40%;
+    background-color: #ffffff;
+    padding: 30px;
+    padding-left: 160px;
+    text-align: center;
+
+}
+
+/* Main column */
+.main {
+    -ms-flex: 60%; /* IE10 */
+    flex: 60%;
+    background-color: white;
+    text-align: left;
+    padding:30px;
+    padding-right: 60px;
+
+}
+.text{
+    text-align: center;
+}
+
+.new{
+    text-align: center;
+}
+
+.row{
+    text-align: center;
+}
+
+.row row-cols-1{
+    -ms-flex: 100%; /* IE10 */
+    flex: 100%;
+    background-color: #ffffff;
+    height: 100px;
+    text-align: center;
+}
+.col{
+    -ms-flex: 10%; /* IE10 */
+    flex: 5%;
+    background-color: #ffffff;
+    padding: 50px;
+    text-align: center;
+}
+.btn-outline-secondary {
+    color: #6c757d;}
+.btn {
+    background: white;
+    width: 70px;
+    height: 50px;
+    border: brown;
+}
+/* Fake image, just for this example */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+
+
+/* Fake image, just for this example */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+.fakeimg {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+
+
+
+form .btn-primary,
+.modal .btn-primary {
+    color: #fff;
+    background: #0d6efd;
+    border: 1px #0d6efd;
+    width: auto;
+    height: auto;
+}
+
+
+form .btn-secondary,
+.modal .btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    width: auto;
+    height: auto;
+}
+
+.modal .close {
+    padding: 1rem;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    margin: -1rem -1rem -1rem auto;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+
+    text-decoration: none;
+    text-underline: none;
+}
+
+.main-row {
+    display: none;
+}
+
+.main-row:target {
+    display: inherit;
+}
+
+#loginModal {
+    background: rgba(0,0,0,0.4);
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+
+
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+    .side{
+        float: none;
+        width: 100%;
+    }
+    .main{
+        float: none;
+        width: 100%;
+    }
+}

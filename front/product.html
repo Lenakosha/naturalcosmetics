@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200&display=swap" rel="stylesheet">
+    <link href="style/main.css" rel="stylesheet">
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/items.js"></script>
+    <script src="scripts/user.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://cdn.icon-icons.com/icons2/2751/PNG/512/menu_burger_icon_176150.png" width="35" height="35" >
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li class="d-none nav-item_template"><a class="dropdown-item item-name" href="#">тоник для лица</a></li>
+                <script> _itemsApi.loadItems(document.querySelector(".nav-item_template"), 1, 100) </script>
+            </ul>
+        </div>
+        <a class="navbar-brand" href="#"><h1>EkoKosmetika</h1></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false" align="left">
+                        Фильтр
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" align="left">
+                        <li class="nav-categories_template d-none"><a class="dropdown-item category-name" href="#">Антицеллюлитные средства</a></li>
+                        <script> _itemsApi.loadCategories(document.querySelector(".nav-categories_template"), 1, 100) </script>
+                    </ul>
+                <button class="btn btn-outline-secondary" >
+                    <img src="https://www.clipartmax.com/png/full/129-1294696_heart-computer-icons-clip-art-hobby-icon-white-png.png" width="35" height="35" >
+                </button>
+            </ul>
+
+
+            <div class="header__auth">
+
+
+                <img src="https://miro.medium.com/max/2400/1*hgRr3ByksTSJmzK0MuM8YA@2x.jpeg" width="30" height="40" >
+                <a class="auth__lnk is-login d-none" id="logged_btn" href="client.html">Login</a>
+                <a class="auth__lnk is-login" id="unlogged_btn" href="authorization.html">Вход / Регистрация</a>
+
+            </div>
+
+            <form class="d-flex">
+                <button class="btn btn-outline-secondary" >
+                    <img src="http://cdn.onlinewebfonts.com/svg/img_19457.png" width="20" height="20" >
+                </button>
+                <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+                <button class="btn btn-outline-secondary" >
+                    <img src="http://cdn.onlinewebfonts.com/svg/download_197711.png" width="35" height="35" >
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="new">
+<h2>ИМЯ ТОВАРА</h2>
+</div>
+
+<div class="row">
+    <div class="side">
+        <div class="fakeimg" >
+            <img src="..." width="300" height="400"  >
+        </div>
+    </div>
+    <div class="main">
+        <h5 id="product-name">Name..........................................................................</h5>
+        <p id="product-descriptions">Description</p>
+        <p id="product-options">Options ......................................</p>
+        <p id="product-price">Price</p>
+        <button class="btn btn-outline-secondary" onclick="addToCart">
+            <img src="http://cdn.onlinewebfonts.com/svg/download_197711.png" width="35" height="35" >
+        </button>
+        <button class="btn btn-outline-secondary" >
+            <img src="https://www.clipartmax.com/png/full/129-1294696_heart-computer-icons-clip-art-hobby-icon-white-png.png" width="35" height="35" >
+        </button>
+
+    </div>
+    <div class="text">
+        <p>ЭФФЕКТИВНЫЕ ИНГРЕДИЕНТЫ</p>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="https://0fe108ac-b418-4635-819f-c57d720ca937.akamaized.net/assets/cache_image/assets/img/ingredient/36_345x0_b0a.png"   >
+                    <p> Название</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://0fe108ac-b418-4635-819f-c57d720ca937.akamaized.net/assets/cache_image/assets/img/ingredient/115_345x0_b0a.png" class="card-img-top" alt="..." >
+                    <p> Название</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://0fe108ac-b418-4635-819f-c57d720ca937.akamaized.net/assets/cache_image/assets/img/ingredient/1_345x0_b0a.png" class="card-img-top" alt="..." >
+                    <p> Название</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://0fe108ac-b418-4635-819f-c57d720ca937.akamaized.net/assets/cache_image/assets/img/ingredient/10_345x0_48f.webp" class="card-img-top" alt="..." >
+                    <p> Название</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<div class="footer">
+    <h5>EkoKosmetika-2021</h5>
+    <p> lenakoshkina2000@gmail.com</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
+
